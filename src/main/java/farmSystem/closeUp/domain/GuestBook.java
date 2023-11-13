@@ -16,7 +16,10 @@ public class GuestBook extends BaseEntity{
     @Column(name = "guestbook_id")
     private Long guestBookId;
 
-    private String content;
+    private Long guestBookUserId;
+    private String guestBookUserNickname;
+    private String guestBookContent;
+    private String guestBookUserProfileImageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "creator_id", referencedColumnName =  "user_id")
@@ -27,8 +30,12 @@ public class GuestBook extends BaseEntity{
     private User user; //일반 유저
 
     @Builder
-    public GuestBook(Long guestBookId, String content){
+    public GuestBook(Long guestBookId, Long guestBookUserId, String guestBookUserNickname, String guestBookContent, String guestBookUserProfileImageUrl){
         this.guestBookId = guestBookId;
-        this.content = content;
+        this.guestBookUserId = guestBookUserId;
+        this.guestBookUserNickname = guestBookUserNickname;
+        this.guestBookUserProfileImageUrl = guestBookUserProfileImageUrl;
+        this.guestBookContent = guestBookContent;
+
     }
 }

@@ -35,6 +35,7 @@ public class RaffleProduct extends BaseEntity{
     private Long winnerCount;
     private Long rafflePrice;
     private String address;
+    private String raffleThumbnailUrl;
     @DateTimeFormat(pattern = "yyyy.MM.dd HH:mm:ss")
     private LocalDateTime winningDate;
 
@@ -46,8 +47,13 @@ public class RaffleProduct extends BaseEntity{
     @JoinColumn(name="category_id")
     private Category category;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="image")
+    private Image image;
+
+
     @Builder
-    public RaffleProduct(Long raffleProductId, String title, LocalDateTime startDate, LocalDateTime endDate, String content, Long winnerCount, Long rafflePrice, String address, LocalDateTime winningDate) {
+    public RaffleProduct(Long raffleProductId, String title, LocalDateTime startDate, LocalDateTime endDate, String content, Long winnerCount, Long rafflePrice, String address, LocalDateTime winningDate, String raffleThumbnailUrl) {
         this.raffleProductId = raffleProductId;
         this.title = title;
         this.startDate = startDate;
@@ -57,5 +63,6 @@ public class RaffleProduct extends BaseEntity{
         this.rafflePrice = rafflePrice;
         this.address = address;
         this.winningDate = winningDate;
+        this.raffleThumbnailUrl = raffleThumbnailUrl;
     }
 }

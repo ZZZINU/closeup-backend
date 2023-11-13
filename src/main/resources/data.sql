@@ -126,11 +126,6 @@ INSERT INTO image (created_at, notification_id, image_url, original_image_name, 
 VALUES (now(), 1, '공지1 이미지 url 2', '원래 이미지 이름2', '업로드 이미지 이름2');
 
 -- 방명록
-INSERT INTO guest_book (user_id, creator_id, content, created_at)
-VALUES (9, 1, 'ㅎㅇ', '2023-09-02 12:00:00');
-INSERT INTO guest_book (user_id, creator_id, content, created_at)
-VALUES (9, 2, '헬로우', '2023-09-02 13:00:00');
-INSERT INTO guest_book (user_id, creator_id, content, created_at)
-VALUES (9, 3, '봉주르', '2023-09-02 14:00:00');
-INSERT INTO guest_book (user_id, creator_id, content, created_at)
-VALUES (10, 7, '사와디캅', '2023-09-05 12:00:00');
+INSERT INTO guest_book (user_id, creator_id, guest_book_content, created_at)
+VALUES (9, 1, 'HI', '2023-09-02 12:00:00');
+
